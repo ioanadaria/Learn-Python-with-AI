@@ -41,7 +41,7 @@ Notes:
 - "Klein blue" can be approximated with a deep blue like `#002FA7` (tweak as needed for contrast).
 
 ### Step 3
-- [ ] Layer in "personality" with hover animations and playful UI details that nod to vinyl records and cats.
+- [x] Layer in "personality" with hover animations and playful UI details that nod to vinyl records and cats.
 
 Acceptance criteria:
 - Buttons/links/cards have hover states (e.g., lift + shadow + underline animation) with subtle transitions.
