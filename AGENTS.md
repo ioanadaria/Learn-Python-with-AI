@@ -110,3 +110,19 @@ When reporting a failure (tests, scripts, runtime errors), include:
 - Root cause (most likely + any alternatives considered)
 - Fix applied (and why it's safe)
 - Prevention (tests, validation, guardrails, docs updates)
+
+## Test-Driven Development
+
+When implementing new features or functions:
+
+1. Write tests FIRST in `stringUtils.test.js` using Node's native test runner:
+   - Write tests using: `test('description', () => { assert.strictEqual(actual, expected); });`
+
+2. Run tests with `node --test stringUtils.test.js` and confirm they FAIL (red)
+
+3. Implement the feature in the source file
+
+4. Run tests again with `node --test stringUtils.test.js` and confirm they PASS (green)
+
+Always run tests before and after implementation to verify the red-green cycle. Don't worry about git or initialize git repos if there isn't one.
+
