@@ -1,6 +1,12 @@
 # Learn Python with AI
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-002fa7?style=for-the-badge)](https://ioanadaria.github.io/Learn-Python-with-AI/)
+
 A friendly single-page site about learning Python with AI, with side quests in coding, vinyl, and cats.
+
+## Live Site
+
+- https://ioanadaria.github.io/Learn-Python-with-AI/
 
 ## Overview
 
@@ -36,7 +42,7 @@ Because this is a static page, you can open it directly in your browser:
 - [x] Contact links (including Instagram)
 - [ ] Add simple form with validation
 - [ ] Add basic tests/checklist for manual QA
-- [ ] Publish with GitHub Pages
+- [x] Publish with GitHub Pages
 
 ## Accessibility Notes
 
