@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A friendly, single-page starter site about learning Python with AI — with side quests in coding, vinyl, and cats.">
+  <title>Learn Python with AI</title>
+
+  <!--
+    Step 1 goal (spec.md):
+    - Keep styling minimal for now.
+    - Step 2 will introduce the full visual system (CSS variables, Klein-blue accent, cards, etc.).
+  -->
+  <style>
+    /* Minimal baseline styles for readability only (Step 2 will replace/expand this). */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 24px;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 24px; top: 24px; width: auto; height: auto; padding: 8px 12px; background: #fff; border: 2px solid #000; }
+    nav ul { list-style: none; padding: 0; margin: 12px 0 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
+    nav a { text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 28px 0; border-top: 1px solid #e8e8e8; }
+    section:first-of-type { border-top: 0; }
+    .hero { padding-top: 0; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+    .button {
+      display: inline-block;
+      padding: 10px 14px;
+      border: 1px solid #111;
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .button:hover { background: #f4f4f4; }
+    .muted { color: #444; }
+    @media (max-width: 520px) {
+      body { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Site header + in-page navigation -->
+  <header class="container">
+    <h1>Learn Python with AI</h1>
+    <p class="muted">
+      A small, friendly corner of the internet for learning Python with a bit of AI support — plus side quests in coding,
+      vinyl, and cats.
+    </p>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#fun-facts">Fun Facts</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section id="hero" class="hero" aria-label="Hero">
+      <h2>Build confidence in Python (with AI as your study buddy)</h2>
+      <p>
+        My goal: learn by doing. Small scripts, tidy modules, real explanations, and “why it works” notes — with AI used as
+        a helper, not a crutch.
+      </p>
+      <div class="cta-row">
+        <a class="button" href="#projects">See starter projects</a>
+        <a class="button" href="#contact">Say hi</a>
+      </div>
+      <p class="muted">
+        Themes you’ll see around here: <strong>AI</strong>, <strong>coding</strong>, <strong>music/vinyl</strong>, and
+        <strong>cats</strong>.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        This is a single-page starter site for a learning journey: Python fundamentals, good habits (tests, naming, clean
+        structure), and occasional detours into music and cat-centric joy.
+      </p>
+      <p class="muted">
+        AI note: I use AI for explanations, debugging support, and practice prompts — and I keep track of what I learned,
+        not just what I shipped.
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="muted">Small experiments that grow into reusable building blocks.</p>
+      <ul>
+        <li><strong>Prompt-to-code drills</strong> — tiny exercises to practice loops, functions, and debugging.</li>
+        <li><strong>Mini text tools</strong> — parsing, cleaning, and transforming text (with tests when it matters).</li>
+        <li><strong>Vinyl log (eventually)</strong> — a lightweight tracker for albums, moods, and “play again” notes.</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="muted">
+        This will become progress bars in Step 4. For now, it’s a simple list so the structure is in place.
+      </p>
+      <ul>
+        <li>Python basics (syntax, data structures, functions)</li>
+        <li>Prompting for learning (asking better questions, validating answers)</li>
+        <li>Web basics (HTML/CSS, accessibility, responsive layout)</li>
+      </ul>
+    </section>
+
+    <!-- Fun Facts -->
+    <section id="fun-facts">
+      <h2>Fun Facts</h2>
+      <ul>
+        <li>I can talk about record sleeves and liner notes for an unreasonable amount of time.</li>
+        <li>Cats are basically tiny QA engineers: they find every edge case.</li>
+        <li>My favorite “feature” is a good explanation.</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Want to collaborate, share resources, or swap “AI learning wins”? Reach out:
+      </p>
+      <ul>
+        <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
+        <li>GitHub: <a href="#" aria-label="GitHub profile (placeholder)">github.com/your-handle</a></li>
+        <li>Social: <a href="#" aria-label="Social profile (placeholder)">@your-handle</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p class="muted">
+      Built as a single-page learning log. Next up: a Klein-blue visual system, playful hover details, and skills progress
+      bars.
+    </p>
+  </footer>
+</body>
+</html>
