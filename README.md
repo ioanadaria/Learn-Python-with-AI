@@ -8,6 +8,12 @@ A friendly single-page site about learning Python with AI, with side quests in c
 
 - https://ioanadaria.github.io/Learn-Python-with-AI/
 
+## Screenshot
+
+[![Learn Python with AI screenshot](assets/site-preview.svg)](https://ioanadaria.github.io/Learn-Python-with-AI/)
+
+> Note: This is a styled placeholder preview. Replace it with a real screenshot anytime for a stronger portfolio thumbnail.
+
 ## Overview
 
 This project is a lightweight personal learning log built as a static HTML page.
