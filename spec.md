@@ -51,7 +51,7 @@ Acceptance criteria:
 - Optional: a CSS-only "vinyl" badge exists and can "spin" on hover (respect reduced-motion).
 
 ### Step 4
-- [ ] Finish with Skills progress bars, polish, and responsive touch-ups to make the page feel complete.
+- [x] Finish with Skills progress bars, polish, and responsive touch-ups to make the page feel complete.
 
 Acceptance criteria:
 - Skills section includes labeled progress bars built with pure HTML/CSS.
