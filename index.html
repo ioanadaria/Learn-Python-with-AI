@@ -12,37 +12,172 @@
     - Step 2 will introduce the full visual system (CSS variables, Klein-blue accent, cards, etc.).
   -->
   <style>
-    /* Minimal baseline styles for readability only (Step 2 will replace/expand this). */
+    /*
+      Step 2 (spec.md): visual system
+      - Inline CSS only (no external stylesheets)
+      - Klein-blue accent + subtle gradient background
+      - CSS variables for colors, spacing, radius; used consistently
+      - Centered readable container, modern type scale, card-like sections
+      - Lightweight + accessible contrast
+    */
+
+    :root {
+      /* Color system */
+      --color-klein-blue: #002fa7; /* Klein Blue approximation; adjust later if needed */
+      --color-bg: #070a12;
+      --color-bg-2: #0b1020;
+      --color-surface: rgba(255, 255, 255, 0.06);
+      --color-surface-strong: rgba(255, 255, 255, 0.09);
+      --color-border: rgba(255, 255, 255, 0.12);
+      --color-text: #eef2ff;
+      --color-muted: rgba(238, 242, 255, 0.72);
+      --color-link: rgba(160, 190, 255, 0.95);
+      --color-shadow: rgba(0, 0, 0, 0.35);
+
+      /* Spacing + layout */
+      --space-1: 6px;
+      --space-2: 10px;
+      --space-3: 14px;
+      --space-4: 18px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 44px;
+      --container-max: 980px;
+
+      /* Shape */
+      --radius-1: 10px;
+      --radius-2: 16px;
+    }
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       margin: 0;
+      color: var(--color-text);
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-      line-height: 1.5;
-      padding: 24px;
+      line-height: 1.55;
+      padding: var(--space-6);
+
+      /* Subtle gradient background (dark, but readable). */
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(0, 47, 167, 0.35), transparent 55%),
+        radial-gradient(900px 600px at 95% 10%, rgba(160, 190, 255, 0.18), transparent 60%),
+        linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-2) 100%);
     }
-    .container { max-width: 960px; margin: 0 auto; }
-    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .skip-link:focus { left: 24px; top: 24px; width: auto; height: auto; padding: 8px 12px; background: #fff; border: 2px solid #000; }
-    nav ul { list-style: none; padding: 0; margin: 12px 0 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
-    nav a { text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 28px 0; border-top: 1px solid #e8e8e8; }
-    section:first-of-type { border-top: 0; }
-    .hero { padding-top: 0; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+
+    .container { max-width: var(--container-max); margin: 0 auto; }
+
+    /* Modern, readable type scale */
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    h2 {
+      margin: 0 0 var(--space-2) 0;
+      font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+      line-height: 1.25;
+    }
+    p { margin: 0 0 var(--space-3) 0; }
+    ul { margin: 0; padding-left: 1.1rem; }
+    li { margin: 0 0 var(--space-1) 0; color: var(--color-muted); }
+
+    .muted { color: var(--color-muted); }
+
+    /* Accessible skip link (kept early for keyboard users). */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      left: var(--space-6);
+      top: var(--space-6);
+      width: auto;
+      height: auto;
+      padding: var(--space-2) var(--space-3);
+      background: #ffffff;
+      border: 2px solid #000000;
+      border-radius: var(--radius-1);
+    }
+
+    /* Header + nav as a subtle surface */
+    header.container {
+      padding: var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2);
+      background: linear-gradient(180deg, var(--color-surface-strong), var(--color-surface));
+      box-shadow: 0 20px 45px var(--color-shadow);
+    }
+
+    nav { margin-top: var(--space-4); }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    a {
+      color: var(--color-link);
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
+    a:hover { text-decoration: underline; }
+
+    /*
+      Focus styles: not explicitly required until Step 4, but this supports the global “accessibility basics”
+      definition-of-done and prevents us from adding focus styles retroactively.
+    */
+    a:focus-visible, .button:focus-visible {
+      outline: 3px solid rgba(0, 47, 167, 0.85);
+      outline-offset: 3px;
+      border-radius: var(--radius-1);
+    }
+
+    main.container { margin-top: var(--space-6); }
+
+    /* Card-like section surfaces (consistent spacing + radius + border + shadow). */
+    section {
+      padding: var(--space-6);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2);
+      background: var(--color-surface);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+    section + section { margin-top: var(--space-5); }
+
+    .hero { background: linear-gradient(180deg, rgba(0, 47, 167, 0.22), var(--color-surface)); }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
     .button {
       display: inline-block;
       padding: 10px 14px;
-      border: 1px solid #111;
-      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius-1);
       text-decoration: none;
-      color: inherit;
+      color: var(--color-text);
+      background: rgba(255, 255, 255, 0.05);
     }
-    .button:hover { background: #f4f4f4; }
-    .muted { color: #444; }
+    .button:hover { background: rgba(255, 255, 255, 0.09); }
+
+    footer.container {
+      margin-top: var(--space-6);
+      padding: var(--space-5) var(--space-6);
+      color: var(--color-muted);
+      text-align: center;
+    }
+
     @media (max-width: 520px) {
-      body { padding: 16px; }
+      body { padding: var(--space-4); }
+      header.container { padding: var(--space-5); }
+      section { padding: var(--space-5); }
     }
   </style>
 </head>

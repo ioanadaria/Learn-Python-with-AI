@@ -28,7 +28,7 @@ Acceptance criteria:
 - Copy feels friendly and on-theme: AI, coding, music/vinyl, and cats.
 
 ### Step 2
-- [ ] Add a fun, clean visual system using a `<style>` block (inline CSS) featuring a Klein-blue accent and a subtle gradient background.
+- [x] Add a fun, clean visual system using a `<style>` block (inline CSS) featuring a Klein-blue accent and a subtle gradient background.
 
 Acceptance criteria:
 - CSS lives in a `<style>` block in `index.html` (no external CSS).
